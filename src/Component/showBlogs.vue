@@ -10,7 +10,10 @@
 </template>
 
 <script>
+import searchMixin from '../mixins/searchMixin'
+
 export default {
+
   components: {
 
   },

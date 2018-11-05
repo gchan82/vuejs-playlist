@@ -1,10 +1,12 @@
 <template>
 <div>
+<router-view></router-view>
+<!--
 <list-blogs></list-blogs>
 <add-blog></add-blog>
 <show-blogs></show-blogs>
+-->
 </div>
-
 </template>
 
 <script>
