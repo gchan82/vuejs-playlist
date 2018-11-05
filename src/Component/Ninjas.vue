@@ -1,11 +1,12 @@
 <template>
-  <div id='ninjas'>
+  <div id="ninjas">
   <ul>
   <li v-for="ninja in ninjas" v-on:click="ninja.show = !ninja.show">
   <h2>{{ninja.name}}</h2>
   <h3 v-show="ninja.show">{{ninja.speciality}}</h3>
   </li>
   </ul>
+  <button v-on:click="deleteNinja">Delete ninja</button>
   </div>
 </template>
 
@@ -14,20 +15,43 @@
 
 
 export default {
+  props: {
+    ninjas: {
+      type: Array,
+      required: true
+    }
+  },
   data(){
     return {
-ninjas: [
-  {name: 'Ryu', speciality: 'Vue Components', show: false},
-  {name: 'Ryu2', speciality: 'Vue Components2', show: false},
-  {name: 'Ryu3', speciality: 'Vue Components3', show: false},
-  {name: 'Ryu4', speciality: 'Vue Components4', show: false},
-  {name: 'Ryu5', speciality: 'Vue Components5', show: false},
-  {name: 'Ryu6', speciality: 'Vue Components6', show: false},
-  {name: 'Ryu7', speciality: 'Vue Components7', show: false},
-]
+
     }
+  },
+  methods: {
+    deleteNinja: function(){
+      this.ninjas.pop()
+    }
+  },
+  //lifecycle hooks
+  beforeCreate(){
+    alert('beforeCreate');
+  },
+  created(){
+    alert('created');
+  },
+  beforeMount(){
+    alert('beforeMount');
+  },
+  mounted(){
+    alert('mounted');
+  },
+  beforeUpdate(){
+    alert('beforeUpdate');
+  },
+  updated(){
+    alert('updated');
   }
-}
+  }
+
 
 </script>
 

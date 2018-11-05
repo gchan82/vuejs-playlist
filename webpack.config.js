@@ -9,6 +9,7 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
+
     rules: [
       {
         test: /\.css$/,
@@ -53,6 +54,15 @@ module.exports = {
             ]
           }
           // other vue-loader options go here
+        }
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          formatter: require('eslint-friendly-formatter')
         }
       },
       {
