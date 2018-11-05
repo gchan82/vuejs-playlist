@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueResource from 'vue-resource'
 
-export const bus = new Vue()
+Vue.use(VueResource)
 
 var vue = new Vue({
   el: '#app',
@@ -9,4 +10,3 @@ var vue = new Vue({
 })
 
 vue()
-bus()
