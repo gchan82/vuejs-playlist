@@ -1,5 +1,6 @@
 .DS_Store
 template.vue
+.eslintrc.js
 node_modules/
 dist/
 npm-debug.log
